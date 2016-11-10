@@ -20,7 +20,7 @@ public class TrackUserController {
     @ApiOperation(value = "asd", nickname = "dasd", produces = "application/json")
     @RequestMapping(value = "/track/{id}", method = RequestMethod.GET, produces = "text/html")
     public String getHelloMessage(@PathVariable("id") String id) {
-        trackService.restoreDefaultBooks();
+        trackService.restoreDefaultJobAdvertisement();
         List<JobAdvertisement> all = trackService.findAll();
         return String.format("Hello id: '%s'", id);
     }

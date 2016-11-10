@@ -32,8 +32,8 @@ public class TrackService {
         repository.save(jobAdvertisement);
     }
 
-    public void delete(JobAdvertisement book) {
-        repository.delete(book);
+    public void delete(JobAdvertisement jobAdvertisement) {
+        repository.delete(jobAdvertisement);
     }
 
     /**
@@ -46,7 +46,7 @@ public class TrackService {
     /**
      * Restore the original set of JobAdvertisement to the database.
      */
-    public void restoreDefaultBooks() {
+    public void restoreDefaultJobAdvertisement() {
         repository.deleteAll();
 
 
