@@ -42,4 +42,13 @@ public class JobAdvertisement {
     public void setBranch(String branch) {
         this.branch = branch;
     }
+
+    @Override
+    public String toString() {
+        return "JobAdvertisement{" +
+                "id='" + id + '\'' +
+                ", branch='" + branch + '\'' +
+                ", views=" + views +
+                '}';
+    }
 }

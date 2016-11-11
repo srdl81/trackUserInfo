@@ -1,12 +1,12 @@
 package se.ams.track.config;
 
-import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.JacksonJsonRedisSerializer;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import se.ams.track.model.JobAdvertisement;
 
@@ -14,7 +14,7 @@ import se.ams.track.model.JobAdvertisement;
 @Configuration
 public class RedisConfiguration {
 
-    @Inject
+    @Autowired
     private JedisConnectionFactory jedisConnFactory;
 
     @Bean
@@ -24,8 +24,8 @@ public class RedisConfiguration {
     }
 
     @Bean
-    public JacksonJsonRedisSerializer<JobAdvertisement> jacksonJsonRedisJsonSerializer() {
-        JacksonJsonRedisSerializer<JobAdvertisement> jacksonJsonRedisJsonSerializer = new JacksonJsonRedisSerializer<>(JobAdvertisement.class);
+    public Jackson2JsonRedisSerializer<JobAdvertisement> jacksonJsonRedisJsonSerializer() {
+        Jackson2JsonRedisSerializer<JobAdvertisement> jacksonJsonRedisJsonSerializer = new Jackson2JsonRedisSerializer<>(JobAdvertisement.class);
         return jacksonJsonRedisJsonSerializer;
     }
 
